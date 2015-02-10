@@ -2,7 +2,7 @@
 
 This document describes the functionality provided by the XL Release FlowDock plugin.
 
-See the **XL Release Reference Manual** for background information on XL Release and release orchestration concepts.
+See the [XL Release Reference Manual](https://docs.xebialabs.com/xl-release/4.5.x/reference_manual.html) for background information on XL Release and release orchestration concepts.
 
 # Overview #
 
