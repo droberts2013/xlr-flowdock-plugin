@@ -19,8 +19,9 @@ Place the plugin JAR file into your `SERVER_HOME/plugins` directory.
 
 # Usage #
 
-1. Go to `Settings - Configuration - Flowdock: Configuration`, add a new configuration
-2. Provide Title (Can be anything)
-3. Provide API url (eg: https://api.flowdock.com)
-4. Provide Flow token (See your Flow configuration in Flowdock)
-5. Enable or Disable the Flowdock configuration.
+1. Go to `Settings - Configuration - Flowdock: Configuration`
+   ![Flowdock configuration part 1](/src/doc/resources/Flowdock_configuration_1.png?raw=true "Flowdock configuration part 1")
+2. Add a new configuration
+   ![Flowdock configuration part 2](/src/doc/resources/Flowdock_configuration_2.png?raw=true "Flowdock configuration part 2")
+3. Provide Title (Can be anything), API url (eg: https://api.flowdock.com), Flow token (See your Flow configuration in Flowdock) and enable or disable the Flowdock configuration.
+   ![Flowdock configuration part 3](/src/doc/resources/Flowdock_configuration_3.png?raw=true "Flowdock configuration part 3")
