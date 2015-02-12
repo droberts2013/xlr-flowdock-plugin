@@ -1,6 +1,5 @@
 package com.xebialabs.xlrelease.flowdock.plugin;
 
-import com.xebialabs.deployit.engine.spi.event.AuditableDeployitEvent;
 import com.xebialabs.deployit.plugin.api.udm.ConfigurationItem;
 
 import java.io.UnsupportedEncodingException;
@@ -8,7 +7,7 @@ import java.io.UnsupportedEncodingException;
 /**
  * Created by jdewinne on 2/5/15.
  */
-public class TeamInboxMessage extends FlowDockMessage {
+public class TeamInboxMessage extends FlowdockMessage {
 
     public static final String XLRELEASE_RELEASE_STARTED_MAIL = "xlrelease+started@flowdock.com";
 

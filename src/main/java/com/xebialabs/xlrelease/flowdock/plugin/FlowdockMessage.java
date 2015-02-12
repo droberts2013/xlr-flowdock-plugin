@@ -6,7 +6,7 @@ import java.net.URLEncoder;
 /**
  * Created by jdewinne on 2/5/15.
  */
-public abstract class FlowDockMessage {
+public abstract class FlowdockMessage {
     protected String content;
     protected String tags;
 

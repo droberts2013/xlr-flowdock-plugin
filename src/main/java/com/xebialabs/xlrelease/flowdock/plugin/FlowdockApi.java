@@ -1,7 +1,7 @@
 package com.xebialabs.xlrelease.flowdock.plugin;
 
 
-import com.xebialabs.xlrelease.flowdock.plugin.exception.FlowDockException;
+import com.xebialabs.xlrelease.flowdock.plugin.exception.FlowdockException;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -16,25 +16,25 @@ import java.net.MalformedURLException;
 /**
  * Created by jdewinne on 2/5/15.
  */
-public class FlowDockApi {
-    private FlowDockConfiguration flowDockConfiguration;
+public class FlowdockApi {
+    private FlowdockConfiguration flowdockConfiguration;
 
-    public FlowDockApi(FlowDockConfiguration flowDockConfiguration) {
-        this.flowDockConfiguration = flowDockConfiguration;
+    public FlowdockApi(FlowdockConfiguration flowdockConfiguration) {
+        this.flowdockConfiguration = flowdockConfiguration;
     }
 
-    public void pushTeamInboxMessage(TeamInboxMessage msg) throws FlowDockException {
+    public void pushTeamInboxMessage(TeamInboxMessage msg) throws FlowdockException {
         try {
             doPost("/messages/team_inbox/", msg.asPostData());
         } catch(UnsupportedEncodingException ex) {
-            throw new FlowDockException("Cannot encode request data: " + ex.getMessage());
+            throw new FlowdockException("Cannot encode request data: " + ex.getMessage());
         }
     }
 
-    private void doPost(String path, String data) throws FlowDockException {
+    private void doPost(String path, String data) throws FlowdockException {
         URL url;
         HttpURLConnection connection = null;
-        String flowdockUrl = flowDockConfiguration.getApiUrl() + path + flowDockConfiguration.getFlowToken();
+        String flowdockUrl = flowdockConfiguration.getApiUrl() + path + flowdockConfiguration.getFlowToken();
         try {
             // create connection
             url = new URL(flowdockUrl);
@@ -64,17 +64,17 @@ public class FlowDockApi {
                 } catch(Exception ex) {
                     // nothing we can do about this
                 } finally {
-                    throw new FlowDockException("Flowdock returned an error response with status " +
+                    throw new FlowdockException("Flowdock returned an error response with status " +
                             connection.getResponseCode() + " " + connection.getResponseMessage() + ", " +
                             responseContent.toString() + "\n\nURL: " + flowdockUrl);
                 }
             }
         } catch(MalformedURLException ex) {
-            throw new FlowDockException("Flowdock API URL is invalid: " + flowdockUrl);
+            throw new FlowdockException("Flowdock API URL is invalid: " + flowdockUrl);
         } catch(ProtocolException ex) {
-            throw new FlowDockException("ProtocolException in connecting to Flowdock: " + ex.getMessage());
+            throw new FlowdockException("ProtocolException in connecting to Flowdock: " + ex.getMessage());
         } catch(IOException ex) {
-            throw new FlowDockException("IOException in connecting to Flowdock: " + ex.getMessage());
+            throw new FlowdockException("IOException in connecting to Flowdock: " + ex.getMessage());
         }
     }
 
