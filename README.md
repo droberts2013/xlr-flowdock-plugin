@@ -6,7 +6,7 @@ See the [XL Release Reference Manual](https://docs.xebialabs.com/xl-release/4.5.
 
 # Overview #
 
-The XL Release Flowdock plugin is a XL Release plugin that adds capability for sending message to a flowdock inbox.
+The XL Release Flowdock plugin is a XL Release plugin that adds capability for sending message to a Flowdock inbox.
 
 # Requirements #
 
