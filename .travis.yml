@@ -2,10 +2,20 @@ language: java
 addons:
   apt:
     packages:
-      - oracle-java8-installer
+    - oracle-java8-installer
 jdk:
-  - oraclejdk8
+- oraclejdk8
 notifications:
   hipchat:
     rooms:
       secure: LdpVRQbAMEiEupJUjytavciJb9XTbv3pc/Ul3y9zU9KV3rlEmRwho/dEdtqNHz7U5rPVAMQKRq88LnLjM131xrBAu8+QxxApGOoYgxc3YJtFUmsYVipVIY3OoTaM+HfoaGCb/47I8RB8m7wSNUOHOVMi+Qf7qBklDlSi0/kVn3g=
+deploy:
+  provider: releases
+  api_key:
+    secure: cJXGWKeSLTYVOu80myYTskhCCDDSlKyrwZAhALAk5snq+r2YBlJJerOrhWTRhVk7NeKw1habdWNQu1tnZfWRyAs1fNYS/VFGqMZK6pL7h1as0Zw3zGEJs3gQ5d9lrWknS/R19qsaXHMjAeC+TRU6EauVnDuwMeEZTaZwPhsATi0=
+  file: build/libs/xlr-flowdock-plugin-1.0.2.jar
+  skip_cleanup: true
+  on:
+    all_branches: true
+    tags: true
+    repo: xebialabs-community/xlr-flowdock-plugin
