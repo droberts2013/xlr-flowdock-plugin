@@ -11,7 +11,7 @@ package com.xebialabs.xlrelease.flowdock.plugin;
 
 import com.xebialabs.deployit.plugin.api.reflect.Type;
 import com.xebialabs.deployit.plugin.api.udm.ConfigurationItem;
-import com.xebialabs.xlrelease.api.XLReleaseServiceHolder;
+import com.xebialabs.deployit.repository.RepositoryServiceHolder;
 import com.xebialabs.deployit.repository.SearchParameters;
 import com.xebialabs.xlrelease.flowdock.plugin.exception.FlowdockNotConfiguredException;
 
@@ -49,7 +49,7 @@ public class FlowdockRepositoryService {
     private void setFlowdockConfigurations() throws FlowdockNotConfiguredException {
         // Get flowdock properties
         SearchParameters parameters = new SearchParameters().setType(Type.valueOf("flowdock.configuration"));
-        List<ConfigurationItem> query = XLReleaseServiceHolder.getRepositoryService().listEntities(parameters);
+        List<ConfigurationItem> query = RepositoryServiceHolder.getRepositoryService().listEntities(parameters);
         if (query.size() > 0) {
             flowdockConfigurations = new ArrayList<FlowdockConfiguration>();
             for (ConfigurationItem read : query) {

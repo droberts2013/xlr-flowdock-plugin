@@ -25,6 +25,7 @@ repositories {
 dependencies {
   compile "com.xebialabs.deployit:udm-plugin-api:$apiVersion"
   compile "com.xebialabs.deployit:engine-spi:$apiVersion"
+  compile "com.xebialabs.deployit:engine-api:$apiVersion"
   compile group: "com.xebialabs.xl-platform", name: "xl-repository-api", version: "$apiVersion", transitive: false
   compile "nl.javadude.t2bus:t2-bus:1.2.1"
 }
