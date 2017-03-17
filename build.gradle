@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.hierynomus.license" version "0.13.1"
+  id "com.github.hierynomus.license" version "0.13.1"
 }
 
 apply plugin: 'java'
@@ -7,93 +7,32 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
 
-group = 'com.xebialabs.deployit.community'
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
 version = '1.0.2'
-def apiVersion = '4.0.1'
-def xlreleaseHome = "$System.env.XLRELEASE_HOME"
+def apiVersion = '2017.1.0'
 
 repositories {
   mavenLocal()
   mavenCentral()
   maven {
-      credentials {
-            username 'community-plugins'
-            password 'community'
-        }
-      url 'http://nexus.xebialabs.com/nexus/content/repositories/releases'
+    credentials {
+      username 'community-plugins'
+      password 'community'
     }
-}
-
-configurations {
-  compile {
-    transitive = false
+    url 'http://nexus.xebialabs.com/nexus/content/repositories/releases'
   }
-  itestCompile { extendsFrom testCompile }
-    itestRuntime { extendsFrom itestCompile, testRuntime }
 }
 
 dependencies {
   compile "com.xebialabs.deployit:udm-plugin-api:$apiVersion"
   compile "com.xebialabs.deployit:engine-spi:$apiVersion"
-  compile "com.xebialabs.deployit:engine-api:$apiVersion"
-  compile "com.google.guava:guava:10.0.1"
+  compile group: "com.xebialabs.xl-platform", name: "xl-repository-api", version: "$apiVersion", transitive: false
   compile "nl.javadude.t2bus:t2-bus:1.2.1"
-  compile "org.slf4j:slf4j-api:1.7.5"
-  compile "org.springframework:spring-beans:3.2.2.RELEASE"
-  compile "joda-time:joda-time:2.7"
-  compile fileTree(dir: "$xlreleaseHome/lib", include: ['*.jar'])
-  testCompile "junit:junit-dep:4.10"
-  itestCompile fileTree(dir: "$xlreleaseHome/lib", include: ['*.jar'])
 }
 
-sourceSets {
-        itest {
-            java {
-                srcDirs = ['src/test/itest']
-            }
-            compileClasspath = sourceSets.main.output + configurations.testCompile + configurations.itestCompile
-            runtimeClasspath = sourceSets.itest.output + configurations.itestCompile + sourceSets.main.output + configurations.itestRuntime
-        }
-}
-
-import org.apache.tools.ant.filters.*
- 
-processResources {
-    filter ReplaceTokens, tokens: [
-        "project.version": project.property("version"),
-        "project.artifactId": project.property("name")
-    ]
-}
-
-task sourcesJar(type: Jar) {
-    from sourceSets.main.allSource
-    classifier = 'sources'
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = "javadoc"
-    from javadoc.destinationDir
-}
-
-artifacts {
-    archives sourcesJar, javadocJar
-}
 
 license {
-    header rootProject.file('License.md')
-    strictCheck false
-    ext.year = Calendar.getInstance().get(Calendar.YEAR)
-    ext.name = 'XEBIALABS'
+  header rootProject.file('License.md')
+  strictCheck false
+  ext.year = Calendar.getInstance().get(Calendar.YEAR)
+  ext.name = 'XEBIALABS'
 }
-
-task itest(dependsOn: 'itestClasses',type: Test) {
-        testClassesDir = sourceSets.itest.output.classesDir
-        classpath = sourceSets.itest.runtimeClasspath
-}  
-
-itest.configure {
-        useJUnit() {
-        }
-}   
