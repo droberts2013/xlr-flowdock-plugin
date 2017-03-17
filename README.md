@@ -2,7 +2,7 @@
 
 This document describes the functionality provided by the XL Release Flowdock plugin.
 
-See the [XL Release Reference Manual](https://docs.xebialabs.com/xl-release/4.5.x/reference_manual.html) for background information on XL Release and release orchestration concepts.
+See the [XL Release Documentation](https://docs.xebialabs.com/xl-release/) for background information on XL Release and release orchestration concepts.
 
 # CI status #
 
@@ -30,7 +30,7 @@ The XL Release Flowdock plugin is a XL Release plugin that adds capability for s
 # Requirements #
 
 * **Requirements**
-	* **XL Release** 4.5.0
+	* **XL Release** 4.8.0
 
 # Installation #
 
@@ -44,3 +44,5 @@ Place the plugin JAR file into your `SERVER_HOME/plugins` directory.
    ![Flowdock configuration part 2](images/Flowdock_configuration_2.png?raw=true "Flowdock configuration part 2")
 3. Provide Title (Can be anything), API url (eg: https://api.flowdock.com), Flow token (See your Flow configuration in Flowdock) and enable or disable the Flowdock configuration.
    ![Flowdock configuration part 3](images/Flowdock_configuration_3.png?raw=true "Flowdock configuration part 3")
+4. Each time XL Release stores something into the Activity logs, this will also be send to Flowdock.   
+
