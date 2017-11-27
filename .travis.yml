@@ -13,7 +13,8 @@ deploy:
   provider: releases
   api_key:
     secure: cJXGWKeSLTYVOu80myYTskhCCDDSlKyrwZAhALAk5snq+r2YBlJJerOrhWTRhVk7NeKw1habdWNQu1tnZfWRyAs1fNYS/VFGqMZK6pL7h1as0Zw3zGEJs3gQ5d9lrWknS/R19qsaXHMjAeC+TRU6EauVnDuwMeEZTaZwPhsATi0=
-  file: build/libs/xlr-flowdock-plugin-1.0.2.jar
+  file_glob: true
+  file: build/libs/*
   skip_cleanup: true
   on:
     all_branches: true

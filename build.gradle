@@ -1,5 +1,6 @@
 plugins {
   id "com.github.hierynomus.license" version "0.14.0"
+  id 'nebula.release' version '6.0.0'
 }
 
 apply plugin: 'java'
@@ -9,6 +10,15 @@ apply plugin: 'maven'
 
 version = '1.0.2'
 def apiVersion = '2017.1.0'
+
+if (!project.hasProperty('release.scope')) {
+  project.ext['release.scope'] = 'patch'
+}
+
+if (!project.hasProperty('release.useLastTag')) {
+  project.ext['release.useLastTag'] = true
+}
+
 
 repositories {
   mavenLocal()
