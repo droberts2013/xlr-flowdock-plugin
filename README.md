@@ -4,13 +4,11 @@ This document describes the functionality provided by the XL Release Flowdock pl
 
 See the [XL Release Documentation](https://docs.xebialabs.com/xl-release/) for background information on XL Release and release orchestration concepts.
 
-# CI status #
-
 [![Build Status][xlr-flowdock-plugin-travis-image] ][xlr-flowdock-plugin-travis-url]
 [![Codacy][xlr-flowdock-plugin-codacy-image] ][xlr-flowdock-plugin-codacy-url]
 [![Code Climate][xlr-flowdock-plugin-code-climate-image] ][xlr-flowdock-plugin-code-climate-url]
 [![License: MIT][xlr-flowdock-plugin-license-image] ][xlr-flowdock-plugin-license-url]
-
+[![Github All Releases][xlr-flowdock-plugin-downloads-image] ]()
 
 [xlr-flowdock-plugin-travis-image]: https://travis-ci.org/xebialabs-community/xlr-flowdock-plugin.svg?branch=master
 [xlr-flowdock-plugin-travis-url]: https://travis-ci.org/xebialabs-community/xlr-flowdock-plugin
@@ -20,6 +18,7 @@ See the [XL Release Documentation](https://docs.xebialabs.com/xl-release/) for b
 [xlr-flowdock-plugin-code-climate-url]: https://codeclimate.com/github/xebialabs-community/xlr-flowdock-plugin
 [xlr-flowdock-plugin-license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
 [xlr-flowdock-plugin-license-url]: https://opensource.org/licenses/MIT
+[xlr-flowdock-plugin-downloads-image]: https://img.shields.io/github/downloads/xebialabs-community/xlr-flowdock-plugin/total.svg
 
 
 
