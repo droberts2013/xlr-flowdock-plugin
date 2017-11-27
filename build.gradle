@@ -17,7 +17,7 @@ xlDocker {
   runPortMapping = '15516:5516'
 }
 
-def apiVersion = '2017.1.0'
+def apiVersion = '2017.6.0'
 
 if (!project.hasProperty('release.scope')) {
   project.ext['release.scope'] = 'patch'
