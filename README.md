@@ -30,7 +30,7 @@ The XL Release Flowdock plugin is a XL Release plugin that adds capability for s
 # Requirements #
 
 * **Requirements**
-	* **XL Release** 4.8.0
+	* **XL Release** 6.0.x+
 
 # Installation #
 
@@ -38,11 +38,9 @@ Place the plugin JAR file into your `SERVER_HOME/plugins` directory.
 
 # Usage #
 
-1. Go to `Settings - Configuration - Flowdock: Configuration`
-   ![Flowdock configuration part 1](images/Flowdock_configuration_1.png?raw=true "Flowdock configuration part 1")
+1. Go to `Settings - Shared configuration - Flowdock: Configuration`
 2. Add a new configuration
-   ![Flowdock configuration part 2](images/Flowdock_configuration_2.png?raw=true "Flowdock configuration part 2")
 3. Provide Title (Can be anything), API url (eg: https://api.flowdock.com), Flow token (See your Flow configuration in Flowdock) and enable or disable the Flowdock configuration.
-   ![Flowdock configuration part 3](images/Flowdock_configuration_3.png?raw=true "Flowdock configuration part 3")
+   ![Flowdock configuration](images/Flowdock_configuration.png?raw=true "Flowdock configuration")
 4. Each time XL Release stores something into the Activity logs, this will also be send to Flowdock.   
 
