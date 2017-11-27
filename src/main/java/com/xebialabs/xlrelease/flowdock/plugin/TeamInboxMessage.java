@@ -64,8 +64,8 @@ public class TeamInboxMessage extends FlowdockMessage {
         TeamInboxMessage msg = new TeamInboxMessage();
         StringBuffer content = new StringBuffer();
         content.append("XL Release event for ").append(ci.getId());
-        content.append(" with message ").append((char[])ci.getProperty("message"));
-        content.append(" from user ").append((char[])ci.getProperty("username"));
+        content.append(" with message ").append((String)ci.getProperty("message"));
+        content.append(" from user ").append((String)ci.getProperty("username"));
 
         msg.setContent(content.toString());
         msg.setSubject("XL Release event");

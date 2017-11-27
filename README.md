@@ -4,13 +4,11 @@ This document describes the functionality provided by the XL Release Flowdock pl
 
 See the [XL Release Documentation](https://docs.xebialabs.com/xl-release/) for background information on XL Release and release orchestration concepts.
 
-# CI status #
-
 [![Build Status][xlr-flowdock-plugin-travis-image] ][xlr-flowdock-plugin-travis-url]
 [![Codacy][xlr-flowdock-plugin-codacy-image] ][xlr-flowdock-plugin-codacy-url]
 [![Code Climate][xlr-flowdock-plugin-code-climate-image] ][xlr-flowdock-plugin-code-climate-url]
 [![License: MIT][xlr-flowdock-plugin-license-image] ][xlr-flowdock-plugin-license-url]
-
+[![Github All Releases][xlr-flowdock-plugin-downloads-image] ]()
 
 [xlr-flowdock-plugin-travis-image]: https://travis-ci.org/xebialabs-community/xlr-flowdock-plugin.svg?branch=master
 [xlr-flowdock-plugin-travis-url]: https://travis-ci.org/xebialabs-community/xlr-flowdock-plugin
@@ -20,6 +18,7 @@ See the [XL Release Documentation](https://docs.xebialabs.com/xl-release/) for b
 [xlr-flowdock-plugin-code-climate-url]: https://codeclimate.com/github/xebialabs-community/xlr-flowdock-plugin
 [xlr-flowdock-plugin-license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
 [xlr-flowdock-plugin-license-url]: https://opensource.org/licenses/MIT
+[xlr-flowdock-plugin-downloads-image]: https://img.shields.io/github/downloads/xebialabs-community/xlr-flowdock-plugin/total.svg
 
 
 
@@ -30,7 +29,7 @@ The XL Release Flowdock plugin is a XL Release plugin that adds capability for s
 # Requirements #
 
 * **Requirements**
-	* **XL Release** 4.8.0
+	* **XL Release** 6.0.x+
 
 # Installation #
 
@@ -38,11 +37,9 @@ Place the plugin JAR file into your `SERVER_HOME/plugins` directory.
 
 # Usage #
 
-1. Go to `Settings - Configuration - Flowdock: Configuration`
-   ![Flowdock configuration part 1](images/Flowdock_configuration_1.png?raw=true "Flowdock configuration part 1")
+1. Go to `Settings - Shared configuration - Flowdock: Configuration`
 2. Add a new configuration
-   ![Flowdock configuration part 2](images/Flowdock_configuration_2.png?raw=true "Flowdock configuration part 2")
 3. Provide Title (Can be anything), API url (eg: https://api.flowdock.com), Flow token (See your Flow configuration in Flowdock) and enable or disable the Flowdock configuration.
-   ![Flowdock configuration part 3](images/Flowdock_configuration_3.png?raw=true "Flowdock configuration part 3")
+   ![Flowdock configuration](images/Flowdock_configuration.png?raw=true "Flowdock configuration")
 4. Each time XL Release stores something into the Activity logs, this will also be send to Flowdock.   
 
