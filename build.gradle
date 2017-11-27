@@ -8,7 +8,6 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
 
-version = '1.0.2'
 def apiVersion = '2017.1.0'
 
 if (!project.hasProperty('release.scope')) {
