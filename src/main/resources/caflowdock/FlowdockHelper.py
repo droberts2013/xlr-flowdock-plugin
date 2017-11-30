@@ -8,6 +8,8 @@
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+import os
+
 class FlowdockHelper(object):
 
     def __init__(self):
@@ -16,3 +18,9 @@ class FlowdockHelper(object):
     @staticmethod
     def get_token(variables):
         return variables['flowToken'] if variables['flowToken'] else variables['flowdockServer']["flowToken"]
+
+    @staticmethod
+    def set_proxy(variables):
+        if variables['flowdockServer']['proxyHost']:
+            os.environ["HTTP_PROXY"] = "http://%s:%s" % (variables['flowdockServer']['proxyHost'], variables['flowdockServer']['proxyPort'])
+            os.environ["HTTPS_PROXY"] = "https://%s:%s" % (variables['flowdockServer']['proxyHost'], variables['flowdockServer']['proxyPort'])
