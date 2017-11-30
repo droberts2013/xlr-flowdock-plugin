@@ -1,4 +1,4 @@
-# Preface #
+# Preface
 
 This document describes the functionality provided by the XL Release Flowdock plugin.
 
@@ -22,20 +22,22 @@ See the [XL Release Documentation](https://docs.xebialabs.com/xl-release/) for b
 
 
 
-# Overview #
+## Overview
 
 The XL Release Flowdock plugin is a XL Release plugin that adds capability for sending message to a Flowdock inbox.
 
-# Requirements #
+## Requirements
 
 * **Requirements**
 	* **XL Release** 6.0.x+
 
-# Installation #
+## Installation
 
 Place the plugin JAR file into your `SERVER_HOME/plugins` directory.
 
-# Usage #
+## Usage
+
+### Event based notifications
 
 1. Go to `Settings - Shared configuration - Flowdock: Configuration`
 2. Add a new configuration
@@ -43,3 +45,6 @@ Place the plugin JAR file into your `SERVER_HOME/plugins` directory.
    ![Flowdock configuration](images/Flowdock_configuration.png?raw=true "Flowdock configuration")
 4. Each time XL Release stores something into the Activity logs, this will also be send to Flowdock.   
 
+### Tasks
+
++ SendTeamInboxMessage: Allows to send a specific message to a TeamInbox.
