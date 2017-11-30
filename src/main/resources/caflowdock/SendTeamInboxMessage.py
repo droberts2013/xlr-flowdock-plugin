@@ -14,6 +14,7 @@ import os
 from caflowdock.FlowdockHelper import FlowdockHelper
 
 os.environ["HTTP_PROXY"] = "http://%s:%s" % (flowdockServer['proxyHost'], flowdockServer['proxyPort'])
+os.environ["HTTPS_PROXY"] = "https://%s:%s" % (flowdockServer['proxyHost'], flowdockServer['proxyPort'])
 api_key = FlowdockHelper.get_token(locals())
 fdclient = flowdock.FlowDock(api_key=api_key, app_name=appName, project=project)
 
