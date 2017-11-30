@@ -57,4 +57,5 @@ license {
   strictCheck false
   ext.year = Calendar.getInstance().get(Calendar.YEAR)
   ext.name = 'XEBIALABS'
+  excludes(["**/requests/**/*.py", "**/flowdock.py"])
 }
