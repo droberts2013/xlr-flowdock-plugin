@@ -10,11 +10,30 @@
 
 -->
 <synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://www.xebialabs.com/deployit/synthetic" xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
+           xmlns="http://www.xebialabs.com/deployit/synthetic"
+           xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
 
     <type type="flowdock.configuration" extends="xlrelease.Configuration">
         <property name="apiUrl" category="input" label="API url" required="true" default="https://api.flowdock.com"/>
-        <property name="flowToken" category="input" label="Flow Token" required="true" />
-        <property name="enabled" category="input" label="Enabled" kind="boolean" />
+        <property name="flowToken" category="input" label="Flow Token" required="true"/>
+        <property name="enabled" category="input" label="Enabled" kind="boolean"/>
+    </type>
+
+    <type type="flowdock.SendTeamInboxMessage" extends="xlrelease.PythonScript">
+        <property name="scriptLocation" default="caflowdock/SendTeamInboxMessage.py" hidden="true"/>
+        <property name="iconLocation" default="caflowdock/flowdock.png" hidden="true"/>
+        <property name="flowdockServer" category="input" label="Server" referenced-type="flowdock.configuration"
+                  kind="ci"/>
+
+        <property name="flowToken" category="input" label="Flow Token" required="false" description="If not configured, the configuration token will be used."/>
+        <property name="appName" category="input" label="Application Name" required="true" default="Python FlowDock" description="Your app name (defaults to 'Python FlowDock')"/>
+        <property name="project" category="input" label="Project" required="false" description="Defaults to nothing" />
+        <property name="fromAddress" category="input" label="From Address" required="true" description="youremail@example.com"/>
+        <property name="subject" category="input" label="Subject" required="true" description="Subject of your post" />
+        <property name="content" category="input" label="Content" required="true" description="HTML body for your post" size="large"/>
+        <property name="fromName" category="input" label="From Name" required="false" description="a human-readable name to go along with the from_address" />
+        <property name="tags" category="input" label="Tags" required="false" kind="list_of_string" description="a list of strings to tag this post with" />
+        <property name="link" category="input" label="Link" required="false" description="a URL to associate with this post" />
+
     </type>
 </synthetic>

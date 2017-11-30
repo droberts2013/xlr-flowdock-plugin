@@ -2,6 +2,7 @@ plugins {
   id "com.github.hierynomus.license" version "0.14.0"
   id "com.xebialabs.xl.docker" version "1.1.0"
   id 'nebula.release' version '6.0.0'
+  id "com.github.hierynomus.jython" version "0.8.0"
 }
 
 apply plugin: 'java'
@@ -42,12 +43,19 @@ dependencies {
   compile "com.xebialabs.deployit:engine-api:$apiVersion"
   compile group: "com.xebialabs.xl-platform", name: "xl-repository-api", version: "$apiVersion", transitive: false
   compile "nl.javadude.t2bus:t2-bus:1.2.1"
+  jython ":requests:2.11.1"
+  jython(":python-flowdock:0.1") {
+    artifact {
+      name = "flowdock"
+      extension = "py"
+    }
+  }
 }
-
 
 license {
   header rootProject.file('License.md')
   strictCheck false
   ext.year = Calendar.getInstance().get(Calendar.YEAR)
   ext.name = 'XEBIALABS'
+  excludes(["**/requests/**/*.py", "**/flowdock.py"])
 }
