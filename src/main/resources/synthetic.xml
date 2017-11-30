@@ -17,6 +17,8 @@
         <property name="apiUrl" category="input" label="API url" required="true" default="https://api.flowdock.com"/>
         <property name="flowToken" category="input" label="Flow Token" required="true"/>
         <property name="enabled" category="input" label="Enabled" kind="boolean"/>
+        <property name="proxyHost" category="input" required="false" description="HTTP proxy host" />
+        <property name="proxyPort" category="input" required="false" description="HTTP proxy port"/>
     </type>
 
     <type type="flowdock.SendTeamInboxMessage" extends="xlrelease.PythonScript">
