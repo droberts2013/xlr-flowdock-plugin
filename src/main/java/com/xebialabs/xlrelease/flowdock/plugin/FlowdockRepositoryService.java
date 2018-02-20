@@ -1,5 +1,5 @@
 /**
- * Copyright 2017 XEBIALABS
+ * Copyright 2018 XEBIALABS
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
@@ -9,14 +9,14 @@
  */
 package com.xebialabs.xlrelease.flowdock.plugin;
 
-import com.xebialabs.deployit.plugin.api.reflect.Type;
-import com.xebialabs.deployit.plugin.api.udm.ConfigurationItem;
-import com.xebialabs.deployit.repository.RepositoryServiceHolder;
-import com.xebialabs.deployit.repository.SearchParameters;
-import com.xebialabs.xlrelease.flowdock.plugin.exception.FlowdockNotConfiguredException;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import com.xebialabs.deployit.plugin.api.reflect.Type;
+import com.xebialabs.deployit.plugin.api.udm.ConfigurationItem;
+import com.xebialabs.deployit.repository.SearchParameters;
+import com.xebialabs.deployit.repository.RepositoryServiceHolder;
+import com.xebialabs.xlrelease.flowdock.plugin.exception.FlowdockNotConfiguredException;
 
 /**
  * Created by jdewinne on 2/5/15.
@@ -53,7 +53,8 @@ public class FlowdockRepositoryService {
         if (query.size() > 0) {
             flowdockConfigurations = new ArrayList<FlowdockConfiguration>();
             for (ConfigurationItem read : query) {
-                flowdockConfigurations.add(new FlowdockConfiguration((String) read.getProperty("apiUrl"), (String) read.getProperty("flowToken"), (Boolean) read.getProperty("enabled")));
+               flowdockConfigurations.add(new FlowdockConfiguration((String) read.getProperty("apiUrl"), (String) read.getProperty("apiKey"), (Boolean) read.getProperty("enabled"),(String) read.getProperty("proxyHost"),(Integer) read.getProperty("proxyPort"),(String) read.getProperty("templateName"),(String) read.getProperty("flowToken"),(String) read.getProperty("orgParamName")));
+//                flowdockConfigurations.add(new FlowdockConfiguration((String) read.getProperty("apiUrl"), (String) read.getProperty("apiKey"), (Boolean) read.getProperty("enabled"),"",0,(String) read.getProperty("templateName"),(String) read.getProperty("flowToken"),(String) read.getProperty("orgParamName")));
             }
         } else {
             throw new FlowdockNotConfiguredException();

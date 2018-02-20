@@ -1,5 +1,5 @@
 /**
- * Copyright 2017 XEBIALABS
+ * Copyright 2018 XEBIALABS
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
@@ -15,24 +15,63 @@ package com.xebialabs.xlrelease.flowdock.plugin;
 public class FlowdockConfiguration {
 
     private String apiUrl = "";
+    private String apiKey = "";
+    private String proxyHost = "";
+    private Integer proxyPort = 0;
+    private String templateName = "";
     private String flowToken = "";
+    private String orgParamName="";
     private Boolean enabled = Boolean.FALSE;
 
-    public FlowdockConfiguration(String apiUrl, String flowToken, Boolean enabled) {
+    // Add the API token as the global config
+
+    //organization/flowparameterized name for the flow
+
+//    public FlowdockConfiguration(String apiUrl, String apiKey, Boolean enabled, String templateName, String flowToken, String orgParamName) {
+//        this(apiUrl, apiKey, enabled, null, null, templateName, flowToken, orgParamName);
+//    }
+
+    public FlowdockConfiguration(String apiUrl, String apiKey, Boolean enabled, String proxyHost, Integer proxyPort, String templateName, String flowToken, String orgParamName) {
         this.apiUrl = apiUrl;
-        this.flowToken = flowToken.replaceAll("\\s", "");
+        this.apiKey = apiKey;
+        this.proxyHost = proxyHost;
+        this.proxyPort = proxyPort;
         this.enabled = enabled;
+        this.templateName = templateName;
+        this.flowToken = flowToken;
+        this.orgParamName = orgParamName;
     }
 
     public String getApiUrl() {
         return apiUrl;
     }
 
-    public String getFlowToken() {
-        return flowToken;
+    public String getApiKey() {
+        return apiKey;
+    }
+
+    public String getProxyHost() {
+        return proxyHost;
+    }
+
+    public Integer getProxyPort() {
+        return proxyPort;
     }
 
     public Boolean isEnabled() {
         return enabled;
     }
+
+    public String getTemplateName() {
+        return templateName;
+    }
+
+    public String getFlowToken() {
+        return flowToken;
+    }
+
+    public String getOrgParamName() {
+        return orgParamName;
+    }
+
 }
